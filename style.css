@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 15px;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    /* variables */
+    --color1: hsl(0, 78%, 62%);
+    --color2: hsl(180, 62%, 55%);
+    --color3: hsl(34, 97%, 64%);
+    --color4: hsl(212, 86%, 64%);
+    --color5: hsl(234, 12%, 34%);
+    --color6: hsl(229, 6%, 66%);
+    --color7: hsl(0, 0%, 98%);
+}
+
+.container {
+    background-color: var(--color7);
+}
+
+/* titulo */
+
+.title-container {
+    display: grid;
+    align-items: center;
+    width: 60vw;
+    height: 30vh;
+    margin: auto;
+    text-align: center;
+    padding: 3rem;
+    color: var(--color5);
+    animation: 360ms ease-in start;
+}
+
+.title-container h1 {
+    font-size: 1.8rem;
+    font-weight: lighter;
+}
+
+.title-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.title-container p {
+    font-size: 0.9rem;
+    color: var(--color6);
+}
+
+/* cards */
+
+.cards-container {
+    width: 90vw;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: auto;
+    padding: 2rem;
+    gap: 1.5rem;
+    justify-items: center;
+    align-items: center;
+}
+
+.card {
+    background-color: white;
+    width: 80%;
+    height: 50%;
+    box-shadow: 3px 8px 12px 1px rgb(207, 206, 206);
+    border-radius: 7px;
+    padding: 1.7rem;
+    color: var(--color5);
+    display: grid;
+    align-items: center;
+    user-select: none;
+    transition: all 200ms ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.02, 1.02);
+    opacity: 0.8;
+}
+
+.card p {
+    font-size: 0.8rem;
+    color: var(--color6);
+}
+
+.center {
+    height: 100%;
+}
+
+#card1 {
+    justify-self: right;
+    grid-row: 1 / 3;
+    border-top: 6px solid var(--color2);
+    animation: 1.5s ease-in card1;
+}
+
+#card2 {
+    grid-column: 2;
+    grid-row: 1/2;
+    border-top: 6px solid var(--color1);
+    animation: 1.5s ease-in card2;
+}
+
+#card3 {
+    grid-column: 2;
+    grid-row: 2 / 3;
+    border-top: 6px solid var(--color3);
+    animation: 1.5s ease-in card4;
+}
+
+#card4 {
+    justify-self: left;
+    grid-row: 1/ 3;
+    border-top: 6px solid var(--color4);
+    animation: 1.5s ease-in card3;
+}
+
+.card img {
+    position: relative;
+    right: 0;
+    margin-top: 1rem;
+    width: 3rem;
+    align-self: flex-end;
+    justify-self: flex-end;
+}
+
+@media (max-width: 750px) {
+    .title-container {
+        width: 90%;
+        padding: 2rem 0;
+    }
+    .title-container h1 {
+        font-size: 1.4rem;
+        font-weight: lighter;
+    }
+    
+    .title-container h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .title-container p {
+        font-size: 0.7rem;
+        color: var(--color6);
+    }
+    .cards-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        padding: 1rem;
+        margin-bottom: 26rem;
+    }
+    #card1 {
+        grid-column: auto;
+        grid-row: auto;
+        justify-self: center;
+        height: 100%;
+    }
+    
+    #card2 {
+        grid-column: auto;
+        grid-row: auto;
+    }
+    
+    #card3 {
+        grid-column: auto;
+        grid-row: auto;
+        animation: 1.5s ease-in card3;
+    }
+    
+    #card4 {
+        grid-column: auto;
+        grid-row: auto;
+        justify-self: center;
+        height: 100%;
+        animation: 1.5s ease-in card4;
+    }
+}
+
+@media (min-width: 751px) {
+    .cards-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    #card1 {
+        justify-self: right;
+        grid-row: 1 / 3;
+    }
+    
+    #card2 {
+        grid-column: 2;
+        grid-row: 1/2;
+    }
+    
+    #card3 {
+        grid-column: 2;
+        grid-row: 2 / 3;
+    }
+    
+    #card4 {
+        justify-self: left;
+        grid-row: 1/ 3;
+    }
+}
+
+@keyframes start {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes card1 {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes card2 {
+    0% {
+      opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes card3 {
+    0% {
+        opacity: 0;
+      }
+    25% {
+        opacity: 0;
+      }
+    50% {
+        opacity: 0;
+      }
+    75% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes card4 {
+    0% {
+        opacity: 0;
+      }
+    25% {
+        opacity: 0;
+      }
+    50% {
+        opacity: 0;
+      }
+    75% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
